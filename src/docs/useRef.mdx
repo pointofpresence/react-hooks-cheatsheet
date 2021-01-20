@@ -19,7 +19,20 @@ Notes
  - View the [docs.](https://reactjs.org/docs/hooks-reference.html#useref)
 --- 
 
+Примечания
+  - возвращает объект 'ref'.
+  - Сигнатура вызова: `const refContainer = useRef (initialValueToBePersisted)`
+  - Значение сохраняется в свойстве refContainer.current.
+  - значения доступны из свойства `.current` возвращаемого объекта.
+  - Свойство `.current` может быть инициализировано начальным значением, например
+    `useRef (initialValue)`
+  - Объект сохраняется в течение всего времени жизни компонента.
+  - Просмотрите [документы] (https://reactjs.org/docs/hooks-reference.html#useref)
+---
+
 ## Accessing the DOM
+
+## Доступ к DOM
 
 <Editor code={AccessDOM} />
 
@@ -27,9 +40,15 @@ Notes
 
 Other than just holding DOM refs, the "ref" object can hold any value.
 
+## Переменные экземпляра Подобно (Общий контейнер)
+
+Объект «ref» может не только содержать ссылки DOM, но и любое значение.
+
 <Editor code={HoldStringVal} />
 
 You could do the same as storing the return value from a `setInterval` for cleanup.
+
+Вы можете сделать то же самое, что и сохранить возвращаемое значение из setInterval для очистки.
 
 ```js
 function TimerWithRefID() {
@@ -38,6 +57,7 @@ function TimerWithRefID() {
   useEffect(() => {
     const intervalID = setInterval(() => {
       // something to be done every 100ms
+      // что-то делать каждые 100 мс
     }, 100);
 
     // this is where the interval ID is saved in the ref object 
