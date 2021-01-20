@@ -20,17 +20,33 @@ Notes:
  - Ideal for complex state logic where there's a dependency on previous state values or *a lotta* state sub values
  - Depending on your use case you may find useReducer to be quite testable 
  - View the [docs.](https://reactjs.org/docs/hooks-reference.html#usereducer) 
+ 
+ Примечания:
+  - useReducer может использоваться как альтернатива useState.
+  - Сигнатура вызова: `const [состояние, отправка] = useReducer (reducer, initialState, lazyInitFunction)`
+  - Идеально подходит для сложной логики состояния, когда есть зависимость от предыдущих значений состояния или * много * подзначений состояния
+  - В зависимости от вашего варианта использования вы можете найти useReducer достаточно тестируемым
+  - Просмотрите [документы] (https://reactjs.org/docs/hooks-reference.html#usereducer)
+ 
 --- 
 
 ## Basic Usage 
 As opposed to calling `useState`, call `useReducer` with a `reducer` and `initialState` as shown below. 
-The `useReducer` call returns the state property and a `dispatch` function. 
+The `useReducer` call returns the state property and a `dispatch` function.
+
+## Основы использования
+В отличие от вызова useState, вызовите useReducer с помощью reducer и initialState, как показано ниже.
+Вызов useReducer возвращает свойство состояния и функцию отправки.
 
 <Editor noInline code={BasicExample}/>
 
 ## Initialize State Lazily 
 `useReducer` takes a third function parameter. You may initialize state from this function, and whatever's returned from this function is returned as the state object.
 This function will be called with `initialState` - the second parameter. 
+
+## Ленивая инициализация состояния
+useReducer принимает третий параметр функции. Вы можете инициализировать состояние из этой функции, и все, что возвращается из этой функции, возвращается как объект состояния.
+Эта функция будет вызываться со вторым параметром initialState.
 
 <Editor noInline code={InitLazy}/>
 
@@ -40,7 +56,15 @@ This function will be called with `initialState` - the second parameter.
 to the reducer, `action` doesn't have to have a `type` property. 
 This allows for interesting manipulations such as renaming the second parameter and doing the following: 
 
+## Имитируйте поведение this.setState
+useReducer использует редуктор, который не такой строгий, как Redux, например. второй параметр передан
+для редуктора у action не обязательно должно быть свойство type.
+Это позволяет выполнять интересные манипуляции, такие как переименование второго параметра и выполнение следующих действий:
+
 <Editor noInline code={ImitateSetState}/>
 
 <!-- todo: usecase where no re-renders when
 useReducer returns the same state object -->
+
+<! - todo: вариант использования, в котором нет повторной визуализации, когда
+useReducer возвращает тот же объект состояния ->
