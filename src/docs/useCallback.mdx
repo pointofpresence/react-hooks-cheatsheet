@@ -16,10 +16,19 @@ Notes:
  - `useCallback` returns a [memoized](https://en.wikipedia.org/wiki/Memoization) callback. 
  - Call signature: `const memoizedCallback = useCallback(function, arrayDependency)`
  -  View the [docs.](https://reactjs.org/docs/hooks-reference.html#usecallback)
+ 
+ Примечания:
+  - `useCallback` возвращает обратный вызов [мемоизированный] (https://en.wikipedia.org/wiki/Memoization).
+  - Сигнатура вызова: `const memoizedCallback = useCallback (function, arrayDependency)`
+  - Просмотрите [документы] (https://reactjs.org/docs/hooks-reference.html#usecallback)
+  
 --- 
 
 ## Starter Example
 The following example will form the basis of the explanations and code snippets that follow.
+
+## Стартовый пример
+Следующий пример ляжет в основу следующих пояснений и фрагментов кода.
 
 <Editor noInline code={Starter} />
 
@@ -27,16 +36,31 @@ In the example above, the parent component, `<Age />` is updated (and re-rendere
 Consequently, the `<Instructions />` child component is also re-rendered because the `doSomething` prop is passed a
 new callback, with a new reference. This can be seen from the random text colour which changes whenever the state value `age` is updated.
 
+В приведенном выше примере родительский компонент <Age /> обновляется (и повторно визуализируется) всякий раз, когда нажимается кнопка «Сделать старше».
+Следовательно, дочерний компонент `<Instructions />` также повторно визуализируется, потому что опоре `doSomething` передается
+новый обратный вызов с новой ссылкой. Это можно увидеть по случайному цвету текста, который изменяется всякий раз, когда обновляется значение состояния age.
+
+
 > NB: Even though the `Instructions` child component uses `React.memo` to optimize performance, it is still re-rendered.
 
 How can this be fixed? i.e prevent `<Instructions />` from re-rendering needlessly?
 
+> NB: несмотря на то, что дочерний компонент `Instructions` использует` React.memo` для оптимизации производительности, он все равно перерисовывается.
+
+Как это исправить? т.е. предотвратить ненужный повторный рендеринг `<Instructions />`?
+
+
 ## useCallback with referenced function
+
+## useCallback со ссылкой на функцию
 
 <Editor noInline code={ReferencedFn} />
 
 ## useCallback with inline function
 `useCallback` works with an inline function as well. Here's the same solution with a inline `useCallback` call.
+
+## useCallback со встроенной функцией
+useCallback также работает со встроенной функцией. Вот то же самое решение со встроенным вызовом useCallback.
 
 <Editor noInline code={InlineFn} />
 
