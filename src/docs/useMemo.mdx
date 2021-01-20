@@ -12,9 +12,18 @@ Notes:
  - `useMemo` returns a memoized value.
  - Call signature: `const memoizedValue = useMemo(functionThatReturnsValue, arrayDepencies)`
  - View the [docs.](https://reactjs.org/docs/hooks-reference.html#usememo)
+ 
+ 
+ Примечания:
+  - `useMemo` возвращает мемоизированное значение.
+  - Сигнатура вызова: `const memoizedValue = useMemo (functionThatReturnsValue, arrayDepencies)`
+  - Просмотрите [документы] (https://reactjs.org/docs/hooks-reference.html#usememo)
+  
 --- 
 
 ## Starter Example
+
+## Стартовый пример
 
 <Editor noInline code={Starter} />
 
@@ -32,5 +41,20 @@ Any solutions?
 ## Basic Usage
 
 The object, `someValue` may be memoized using `useMemo`. This prevents the needless re-render.
+
+Приведенный выше пример аналогичен приведенному выше для [useCallback] (/ usecallback).
+
+Единственное отличие здесь в том, что someValue - это объект, а НЕ строка.
+Благодаря этому компонент `Instructions` по-прежнему перерисовывается, несмотря на использование` React.memo`.
+
+Почему?
+
+Объекты сравниваются по ссылке, и ссылка на someValue изменяется при повторной визуализации <App />.
+
+Какие-нибудь решения?
+
+## Основное использование
+
+Объект someValue можно запоминать с помощью useMemo. Это предотвращает ненужный повторный рендеринг.
 
 <Editor noInline code={Basic} />
