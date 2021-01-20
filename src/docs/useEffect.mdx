@@ -23,30 +23,53 @@ Notes:
  - `useEffect` accepts a function which can perform any side effects.      
  - Call signature: `useEffect(effectFunction, arrayDependencies)`
  - View the [docs.](https://reactjs.org/docs/hooks-reference.html#useeffect) 
+ 
+ Примечания:
+  - `useEffect` принимает функцию, которая может выполнять любые побочные эффекты.
+  - Сигнатура вызова: `useEffect (effectFunction, arrayDependencies)`
+  - Просмотрите [документы] (https://reactjs.org/docs/hooks-reference.html#useeffect)
 
 --- 
 
 ## Basic Side Effect 
+## Основной побочный эффект
 <Editor code={BasicEffect}/>
 
 ## Effect with Cleanup 
 It's pretty common to clean up an effect after some time. This is possible by returning a function from within the effect function passed to `useEffect`. 
 Below's an example with `addEventListener`.
+
+## Эффект с очисткой
+Довольно часто эффект очищается через некоторое время. Это возможно путем возврата функции из функции эффекта, переданной в `useEffect`.
+Ниже приведен пример с `addEventListener`.
+
 <Editor code={EffectCleanup}/>
 
 ## Multiple Effects 
 Multiple `useEffect` calls can happen within a functional component as shown below: 
+
+## Несколько эффектов
+В функциональном компоненте может происходить несколько вызовов useEffect, как показано ниже:
+
 <Editor code={MultipleEffects}/>
 
 > useEffect calls can be skipped i.e not invoked on every render. 
  This is done by passing a second array argument to the effect function. 
 
+> Вызовы useEffect можно пропустить, т.е. не вызывать при каждом рендере.
+  Это делается путем передачи второго аргумента массива функции эффекта.
 
 ## Skipping Effects (Array Dependency) 
 In the example below, `useEffect` is passed an array of one value, `[randomNumber]`
 Hence, the effect function will be called on mount **and** whenever a new "randomNumber" is generated. 
 
 Click the "Generate random number" button to see this. 
+
+## Пропуск эффектов (зависимость от массива)
+В приведенном ниже примере `useEffect` передается массив из одного значения,` [randomNumber] `
+Следовательно, функция эффекта будет вызываться на mount ** и ** всякий раз, когда генерируется новое «randomNumber».
+
+Нажмите кнопку «Сгенерировать случайное число», чтобы увидеть это.
 
 <Editor code={ArrayDep}/>
 
@@ -56,13 +79,24 @@ Hence, the effect function will be called only on mount.
 
 Click the button and you'll see that the effect function isn't invoked. 
 
+
+## Пропуск эффектов (зависимость от пустого массива)
+В этом примере `useEffect` передается пустой массив` [] `.
+Следовательно, функция эффекта будет вызываться только при монтировании.
+
+Щелкните кнопку, и вы увидите, что функция эффекта не вызывается.
+
 <Editor code={ArrayDepMount}/>
 
 ## Skipping Effects (No array dependency)
 Without an array dependency, the effect function will be run after every single render. 
 
+## Пропуск эффектов (без зависимости от массива)
+Без зависимости от массива функция эффекта будет запускаться после каждого рендеринга.
+
 ```js
 useEffect(() => {
   console.log("This will be logged after every render!")
+  console.log ("Это будет регистрироваться после каждого рендеринга!")
 })
 ```
