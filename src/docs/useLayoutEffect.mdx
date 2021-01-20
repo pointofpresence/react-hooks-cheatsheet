@@ -14,16 +14,26 @@ Notes:
  - Call signature: `useLayoutEffect(effectFunction, arrayDependencies)`
  - Read on to see the difference between `useLayoutEffect` and `useEffect`. 
  - View the [docs.](https://reactjs.org/docs/hooks-reference.html#uselayouteffect)
+
+Примечания:
+  - `useLayoutEffect` имеет ту же сигнатуру, что и` useEffect`.
+  - Сигнатура вызова: `useLayoutEffect (effectFunction, arrayDependencies)`
+  - Прочтите, чтобы увидеть разницу между `useLayoutEffect` и` useEffect`.
+  - Просмотрите [документы] (https://reactjs.org/docs/hooks-reference.html#uselayouteffect)
+ 
 --- 
 
 ```js
 // sample usage: 
+// пример использования:
  useLayoutEffect(() => {
      //do something
+     // что-то делаем
  }, [arrayDep])
 ```
 
 ## Similar Usage as useEffect 
+## Использование аналогично useEffect
 <Editor code={ArrayDep} />
 
 
@@ -39,3 +49,14 @@ the DOM as a side effect. To prevent the user from seeing flickers of changes, y
 
 > The function passed to `useLayoutEffect` will be run before the browser updates the screen. 
 
+## useLayoutEffect против useEffect
+
+Функция, переданная в `useEffect`, срабатывает после макета и рисования.
+то есть после того, как рендеринг был зафиксирован на экране.
+
+Это нормально для большинства побочных эффектов, которые НЕ должны блокировать обновление экрана браузером.
+
+Есть случаи, когда вам может не понравиться поведение, обеспечиваемое `useEffect`. например если вам нужно визуально изменить
+DOM как побочный эффект. Чтобы пользователь не видел мерцания изменений, вы можете использовать `useLayoutEffect`.
+
+> Функция, переданная в `useLayoutEffect`, будет запущена до того, как браузер обновит экран.
