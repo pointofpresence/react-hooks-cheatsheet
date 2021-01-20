@@ -16,10 +16,19 @@ Notes:
  - Call signature: `const contextValue = useContext(contextObject)`
  - It has a simpler API when compared to `MyContext.Consumer` and the render props API it exposes.
  - View the [docs.](https://reactjs.org/docs/hooks-reference.html#usecontext)
+ 
+ Примечания:
+  - `useContext` избавляет вас от стресса от необходимости полагаться на потребителя контекста.
+  - Сигнатура вызова: `const contextValue = useContext (contextObject)`
+  - Он имеет более простой API по сравнению с MyContext.Consumer и предоставляемым им API рендеринга реквизитов.
+  - Просмотрите [документы] (https://reactjs.org/docs/hooks-reference.html#usecontext)
+ 
+ 
 --- 
 
 ```js
 // consuming context via a consumer: 
+// использование контекста через потребителя:
 const ThemeContext = React.createContext("dark");
 
 function Button() {
@@ -31,11 +40,14 @@ function Button() {
 
 Here's a live example with `ThemeContext.Consumer`:
 
+Вот живой пример с ThemeContext.Consumer:
+
 <Editor noInline code={ContextConsumerExample}/>
 
 
 ```js
 // consume context with the useContext hook: 
+// потребляем контекст с помощью хука useContext:
 import {useContext} from 'react';
 
 function ButtonHooks() {
@@ -45,5 +57,7 @@ function ButtonHooks() {
 ```
 
 Here's a live example with `useContext`:
+
+Вот живой пример с `useContext`:
 
 <Editor noInline code={useContextDisplay}/>
