@@ -23,35 +23,25 @@ Notes:
  - View the [docs.](https://reactjs.org/docs/hooks-reference.html#usestate)
  
  Примечания:
-  -`useState` позволяет вам использовать локальное состояние внутри функционального компонента.
-  - Сигнатура вызова: `const [состояние, stateUpdaterFunction] = useState (initialStateValue)`
-  - Просмотрите [документы] (https://reactjs.org/docs/hooks-reference.html#usestate)
+  -`useState` позволяет использовать локальное состояние внутри функционального компонента.
+  - Сигнатура вызова: `const [state, stateUpdaterFunction] = useState(initialStateValue)`
+  - [Документация] (https://reactjs.org/docs/hooks-reference.html#usestate)
 --- 
 
-## Declare State Variable 
-Declaring a state variable is as simple as calling `useState` with some initial state value.
+## Объявление переменной состояния
+Объявление переменной состояния осуществляется вызовом `useState` с некоторым начальным значением состояния.
 <Editor code={DeclareStateVar}/>
 
-## Объявить переменную состояния
-Объявление переменного состояния является простым вызовом `useState` с некоторым начальным государственным значением.
-<Код редактора = {DeclareStateVar} />
-
-## Update State Variable
-Updating a state variable is as simple as invoking the updater function returned by the `useState` invocation. 
-
-## Обновить переменную состояния
-Обновить переменную состояния так же просто, как вызвать функцию обновления, возвращаемую вызовом useState.
+## Обновление переменной состояния
+Обновить переменную состояния можно вызовом функции обновления, возвращенной вызовом `useState`.
 
 ```js
   const [stateValue, updaterFn] = useState(initialStateValue);
 ```
 <Editor code={UpdateStateVar} />
 
-## Multiple State Variables 
-Multiple state variables may be used and updated from within a functional component as shown below:
-
 ## Несколько переменных состояния
-Можно использовать и обновлять несколько переменных состояния из функционального компонента, как показано ниже:
+Можно использовать и обновлять несколько переменных состояния функционального компонента, так как показано ниже:
 
 <Editor code={MultipleStateVars} />
 
@@ -59,7 +49,7 @@ Multiple state variables may be used and updated from within a functional compon
 As opposed to strings and numbers, you could also use an object as the initial value passed on to useState.
 > Nb: You have to pass the entire object to the `useState` updater function as the object is replaced NOT merged. 
 
-## Использовать переменную состояния объекта
+## Использование объекта в качестве переменной состояния
 В отличие от строк и чисел, вы также можете использовать объект в качестве начального значения, передаваемого в useState.
 > Nb: вы должны передать весь объект в функцию обновления `useState`, поскольку объект заменяется НЕ объединяется.
 
