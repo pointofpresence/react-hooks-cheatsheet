@@ -19,28 +19,18 @@ import {useState} from "react"
 
 # useEffect 🦋
  
-Notes: 
- - `useEffect` accepts a function which can perform any side effects.      
- - Call signature: `useEffect(effectFunction, arrayDependencies)`
- - View the [docs.](https://reactjs.org/docs/hooks-reference.html#useeffect) 
- 
- Примечания:
-  - `useEffect` принимает функцию, которая может выполнять любые побочные эффекты.
-  - Сигнатура вызова: `useEffect (effectFunction, arrayDependencies)`
-  - Просмотрите [документы] (https://reactjs.org/docs/hooks-reference.html#useeffect)
+Примечания:
+ - `useEffect` принимает функцию, которая может выполнять любые побочные эффекты.
+ - Сигнатура вызова: `useEffect (effectFunction, arrayDependencies)`
+ - [Документация](https://reactjs.org/docs/hooks-reference.html#useeffect)
 
 --- 
 
-## Basic Side Effect 
 ## Основной побочный эффект
 <Editor code={BasicEffect}/>
 
-## Effect with Cleanup 
-It's pretty common to clean up an effect after some time. This is possible by returning a function from within the effect function passed to `useEffect`. 
-Below's an example with `addEventListener`.
-
 ## Эффект с очисткой
-Довольно часто эффект очищается через некоторое время. Это возможно путем возврата функции из функции эффекта, переданной в `useEffect`.
+Довольно часто эффект нужно очищать через некоторое время. Это возможно путем возврата функции из функции эффекта, переданной в `useEffect`.
 Ниже приведен пример с `addEventListener`.
 
 <Editor code={EffectCleanup}/>
