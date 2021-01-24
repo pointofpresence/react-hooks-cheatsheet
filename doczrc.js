@@ -4,7 +4,7 @@ export default {
   repository: 'https://github.com/ohansemmanuel/react-hooks-cheatsheet',
   indexHtml: 'src/index.html',
   menu: [
-    'Home',
+    'Главная',
     'useState',
     'useEffect',
     'useContext',
@@ -13,7 +13,7 @@ export default {
     'useCallback',
     'useMemo',
     'useRef',
-    'Examples'
+    'Примеры'
   ],
   wrapper: 'src/docs/config/Wrapper.js',
   ordering: 'ascending',
