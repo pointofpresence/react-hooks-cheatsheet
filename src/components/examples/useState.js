@@ -1,6 +1,6 @@
 const DeclareStateVar = `() => {
   const [count] = useState(100)
-  return <div> State variable is {count}</div>
+  return <div> Значение переменной состояния: {count}</div>
 }`
 
 const UpdateStateVar = `() => {
@@ -9,9 +9,9 @@ const UpdateStateVar = `() => {
 
   return (
     <div>
-      Today I am {age} Years of Age
+      Сегодня мне {age}
       <div>
-        <button onClick={handleClick}>Get older! </button>
+        <button onClick={handleClick}>Стать старше! </button>
       </div>
     </div>
   )
@@ -29,15 +29,15 @@ const MultipleStateVars = `() => {
 
   return (
     <div>
-      <p>Today I am {age} Years of Age</p>
-      <p>I have {siblingsNum} siblings</p>
+      <p>Сегодня мне: {age}</p>
+      <p>У меня соседей: {siblingsNum}</p>
 
       <div>
         <button onClick={handleAge}>
-          Get older! 
+          Стать старше! 
         </button>
         <button onClick={handleSiblingsNum}>
-            More siblings! 
+            Больше соседей! 
         </button>
       </div>
     </div>
@@ -55,13 +55,16 @@ const StateObject = `() => {
 
   return (
     <div>
-      <p>Today I am {age} Years of Age</p>
-      <p>I have {siblingsNum} siblings</p>
+      <p>Сегодня мне: {age}</p>
+      <p>У меня соседей: {siblingsNum}</p>
 
       <div>
-        <button onClick={handleClick.bind(null, 'age')}>Get older!</button>
+        <button onClick={handleClick.bind(null, 'age')}>
+            Стать старше!
+        </button>
+        
         <button onClick={handleClick.bind(null, 'siblingsNum')}>
-          More siblings!
+          Больше соседей!
         </button>
       </div>
     </div>
@@ -74,22 +77,22 @@ const StateFromFn = `() => {
     return token || "default#-token#"
   })
 
-  return <div>Token is {token}</div>
+  return <div>Токен: {token}</div>
 }`
 
 const CounterFnSetState = `() => {
   const [count, setCount] = useState(0);
   return (
     <>
-      <p>Count value is: {count}</p>
-      <button onClick={() => setCount(0)}>Reset</button>
+      <p>Значение счетчика: {count}</p>
+      <button onClick={() => setCount(0)}>Сброс</button>
       <button 
         onClick={() => setCount(prevCount => prevCount + 1)}>
-        Plus (+)
+        Плюс (+)
       </button>
       <button 
         onClick={() => setCount(prevCount => prevCount - 1)}>
-       Minus (-)
+       Минус (-)
       </button>
     </>
   );
